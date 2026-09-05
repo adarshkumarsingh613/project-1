@@ -1,10 +1,10 @@
 FROM python:latest
 
-# Creating Application Source Code Directory
-RUN mkdir -p /usr/src/app
+# # Creating Application Source Code Directory
+# RUN mkdir -p /usr/src/app
 
 # Setting Home Directory for containers
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Installing python dependencies
 COPY requirements.txt /usr/src/app/
