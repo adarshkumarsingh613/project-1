@@ -15,7 +15,7 @@ COPY . /usr/src/app
 
 # Application Environment variables
 # ENV APP_ENV=development
-# ENV PORT=8080
+ENV PORT=8080
 
 # Exposing Ports
 EXPOSE 8080
@@ -24,4 +24,5 @@ EXPOSE 8080
 VOLUME ["/app-data"]
 
 # Running Python Application
-CMD ["gunicorn", "-b", ":8080", "-c", "gunicorn.conf.py", "main:app"]
+CMD ["gunicorn", "-b", ":$PORT", "main:app"]
+
