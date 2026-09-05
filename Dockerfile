@@ -14,14 +14,14 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /usr/src/app
 
 # Application Environment variables
-#ENV APP_ENV development
-ENV PORT 8080
+ENV APP_ENV=development
+ENV PORT=8080
 
 # Exposing Ports
-EXPOSE $PORT
+EXPOSE 8080
 
 # Setting Persistent data
 VOLUME ["/app-data"]
 
 # Running Python Application
-CMD gunicorn -b :$PORT -c gunicorn.conf.py main:app
+CMD ["gunicorn", "-b", ":8080", "-c", "gunicorn.conf.py", "main:app"]
